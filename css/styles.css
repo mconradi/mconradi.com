@@ -171,7 +171,7 @@ main {
 
 .hero {
   padding-top: var(--space-lg);
-  padding-bottom: var(--space-xl);
+  padding-bottom: var(--space-lg);
   gap: var(--space-lg);
   align-items: start;
 }
@@ -260,13 +260,17 @@ main {
   scroll-margin-top: var(--header-offset);
 }
 
+#what-i-do.section {
+  padding-top: var(--space-md);
+}
+
 .section__title {
   margin: 0 0 var(--space-sm);
-  font-size: 0.75rem;
-  letter-spacing: 0.18em;
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-faint);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .section__lead {
@@ -676,7 +680,7 @@ main {
 
   .hero--mobile {
     padding-top: var(--space-md);
-    padding-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
   }
 
   .video-panel--portrait {
