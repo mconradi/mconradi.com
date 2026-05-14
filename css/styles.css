@@ -298,6 +298,51 @@ main {
   color: var(--text);
 }
 
+.show-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: var(--max-read);
+}
+
+.show-list__item {
+  display: grid;
+  grid-template-columns: minmax(6.5rem, auto) 1fr;
+  gap: var(--space-md);
+  align-items: baseline;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.show-list__item:first-child {
+  padding-top: 0;
+}
+
+.show-list__item:last-child {
+  border-bottom: 0;
+}
+
+.show-list__date {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.show-list__detail {
+  color: var(--text-muted);
+}
+
+.show-list__place {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.show-list__item--tba .show-list__detail {
+  grid-column: 1 / -1;
+  font-style: italic;
+}
+
 .grid-2 {
   display: grid;
   gap: var(--space-lg);
