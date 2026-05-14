@@ -21,7 +21,7 @@
       </a>
       <nav class="nav" aria-label="Page sections">
         <a href="#what-i-do">What I do</a>
-        <a href="#listen">Listen</a>
+        <a href="#download-songs">Download songs</a>
         <a href="#video">Video</a>
         <a href="#photos">Photos</a>
         <a href="#contact">Contact</a>
@@ -32,7 +32,6 @@
   <main id="main">
     <div id="top"></div>
 
-    <!-- HERO: swap hero image — add images/hero.jpg (or .webp) and update src below; remove or keep placeholder -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__intro">
         <p class="hero__eyebrow">Press kit</p>
@@ -51,9 +50,7 @@
         </div>
       </div>
       <figure class="hero__figure">
-        <!-- Replace src with your press photo, e.g. images/hero.webp -->
-        <img src="images/hero-placeholder.svg" width="800" height="1000" alt="M. Conradi — press photo (replace this image in images/)">
-        <figcaption class="hero__caption">Replace with your hero photo in <code>images/</code> (see <code>images/README.md</code>).</figcaption>
+        <img src="images/hero.jpg" width="2000" height="2499" alt="M. Conradi — press photo">
       </figure>
     </section>
 
@@ -63,53 +60,51 @@
       <div class="grid-2">
         <article class="card">
           <h3>Production &amp; releases</h3>
-          <p>Highlight a track or album with an official Spotify or SoundCloud embed (paste the iframe from the share dialog).</p>
-          <!-- SPOTIFY: In Spotify → Share → Embed → copy iframe. Paste below (adjust height if needed). -->
+          <p><em>Equilibrium</em> — Trip-Hop and Tech-House. Listen on Spotify below.</p>
           <div class="embed embed--spotify">
-            <div class="embed__placeholder">
-              Paste Spotify embed iframe here.<br>
-              Example <code>src</code>: <code>https://open.spotify.com/embed/album/…</code> or <code>…/track/…</code>
-            </div>
-            <!--
-            <iframe title="Spotify player" loading="lazy"
-              src="https://open.spotify.com/embed/album/ALBUM_ID?utm_source=generator"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-            -->
+            <iframe
+              title="Spotify: Equilibrium by M. Conradi"
+              style="border-radius:12px"
+              src="https://open.spotify.com/embed/album/5pM2gWDPKLR2e9yVnW99hD?utm_source=generator"
+              width="100%"
+              loading="lazy"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              allowfullscreen></iframe>
           </div>
         </article>
         <article class="card">
           <h3>Sets &amp; mixes</h3>
-          <p>Use SoundCloud’s embed for DJ sets or previews. Replace the block below with your iframe.</p>
-          <!-- SOUNDCLOUD: Track → Share → Embed → copy iframe code -->
+          <p>Two recent DJ sets on SoundCloud.</p>
           <div class="embed embed--soundcloud">
-            <div class="embed__placeholder">
-              Paste SoundCloud embed iframe here.<br>
-              Example <code>src</code>: <code>https://w.soundcloud.com/player/?url=…</code>
-            </div>
-            <!--
-            <iframe title="SoundCloud player" loading="lazy" height="166" scrolling="no"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/TRACK_ID"></iframe>
-            -->
+            <iframe
+              title="SoundCloud: Live at Bahnwärter Thiel — 9 Oct 2025"
+              loading="lazy"
+              src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fmconradi%2Flive-bahnwarter-thiel-09102025&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;visual=true&amp;color=%23a3a3a3"></iframe>
+          </div>
+          <div class="embed embed--soundcloud">
+            <iframe
+              title="SoundCloud: Turntable Tennis — April 2025"
+              loading="lazy"
+              src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fsoundcloud.com%2Fmconradi%2Fmconradi-turntabletennis-april-2025&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=false&amp;visual=true&amp;color=%23a3a3a3"></iframe>
           </div>
         </article>
       </div>
     </section>
 
-    <section id="listen" class="section">
-      <h2 class="section__title">Listen</h2>
-      <p class="section__lead">Optional short MP3 hosted in this repo. Uncomment the <code>&lt;source&gt;</code> line after you add a file under <code>audio/</code>.</p>
-      <div class="audio-block">
-        <div class="audio-block__label">Direct preview (MP3)</div>
-        <!-- When you add e.g. audio/preview.mp3, uncomment: -->
-        <!--
-        <audio controls preload="metadata">
-          <source src="audio/preview.mp3" type="audio/mpeg">
-        </audio>
-        -->
-        <p style="margin: var(--space-sm) 0 0; font-size: 0.9rem; color: var(--text-muted);">
-          No MP3 linked yet. Add a file to <code>audio/</code> and uncomment the <code>&lt;audio&gt;</code> block in <code>index.html</code>.
-        </p>
+    <section id="download-songs" class="section">
+      <h2 class="section__title">Download songs</h2>
+      <p class="section__lead">Buy and download releases (including <em>Equilibrium</em>) on Bandcamp — high-quality formats, direct support.</p>
+      <div class="embed embed--bandcamp">
+        <iframe
+          title="Bandcamp: Equilibrium by M. Conradi"
+          style="border: 0; width: 100%; height: 120px;"
+          src="https://bandcamp.com/EmbeddedPlayer/album=1509512668/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/"
+          loading="lazy"
+          seamless><a href="https://mconradi.bandcamp.com/album/equilibrium">Equilibrium by M. Conradi</a></iframe>
       </div>
+      <p class="section-sub">
+        <a href="https://mconradi.bandcamp.com/" rel="noopener noreferrer" target="_blank">More releases on Bandcamp</a>
+      </p>
     </section>
 
     <section id="video" class="section">
