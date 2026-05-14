@@ -172,16 +172,28 @@ main {
 .hero {
   padding-top: var(--space-lg);
   padding-bottom: var(--space-xl);
-  display: grid;
   gap: var(--space-lg);
   align-items: start;
 }
 
+.hero.hero--desktop {
+  display: none;
+}
+
+.hero.hero--mobile {
+  display: grid;
+}
+
 @media (min-width: 900px) {
-  .hero {
+  .hero.hero--desktop {
+    display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     gap: var(--space-xl);
     align-items: start;
+  }
+
+  .hero.hero--mobile {
+    display: none;
   }
 }
 
@@ -416,6 +428,18 @@ main {
   max-width: var(--max-read);
 }
 
+@media (min-width: 720px) {
+  #what-i-do .section__lead,
+  #download-songs .section__lead {
+    max-width: none;
+  }
+
+  #download-songs .section__title,
+  #download-songs .section-sub {
+    max-width: none;
+  }
+}
+
 /* Bandcamp bar is fixed intrinsic width — keep block aligned with .section__lead */
 #download-songs .embed--bandcamp {
   max-width: var(--max-read);
@@ -454,9 +478,11 @@ main {
   }
 }
 
-@media (max-width: 500px) {
+/* Narrow / single-column layout: taller Spotify embed so more of the track list is visible */
+@media (max-width: 719px) {
   .embed--spotify iframe {
-    height: 280px;
+    height: min(520px, 72vh);
+    height: min(520px, 72dvh);
   }
 }
 
@@ -648,7 +674,7 @@ main {
     letter-spacing: 0.05em;
   }
 
-  .hero {
+  .hero--mobile {
     padding-top: var(--space-md);
     padding-bottom: var(--space-lg);
   }
@@ -687,9 +713,5 @@ main {
 
   .gallery {
     grid-template-columns: 1fr;
-  }
-
-  .embed--spotify iframe {
-    height: 260px;
   }
 }

@@ -37,7 +37,7 @@
   <main id="main">
     <div id="top"></div>
 
-    <section class="hero" aria-labelledby="hero-heading">
+    <section class="hero hero--desktop" aria-labelledby="hero-heading">
       <div class="hero__intro">
         <p class="hero__eyebrow">Press kit</p>
         <h1 id="hero-heading">M.Conradi</h1>
@@ -55,8 +55,34 @@
         </div>
       </div>
       <figure class="hero__figure">
-        <img src="images/hero.jpg" width="2000" height="2499" alt="M.Conradi — press photo">
+        <img src="images/hero.jpg" width="2000" height="2499" alt="M.Conradi — press photo" fetchpriority="high" decoding="async">
       </figure>
+    </section>
+
+    <section class="hero hero--mobile" aria-labelledby="hero-heading-mobile">
+      <div class="hero__intro">
+        <p class="hero__eyebrow">Press kit</p>
+        <h1 id="hero-heading-mobile">M.Conradi</h1>
+        <p class="hero__tagline">Producer, DJ &amp; MC</p>
+        <div class="hero__bio hero__bio--lead">
+          <p>
+            <strong>M.Conradi</strong> is a Munich-based producer, DJ, and MC. He started in Spain, pursuing both electronic music and Hip-Hop beatmaking and writing. Since 2003, he has performed live across the underground scene as both a DJ and frontman.
+          </p>
+          <p>
+            This background gives him a level of confidence in the DJ booth that goes beyond just mixing tracks. He knows how to read and command a crowd, especially during peak-time, where his focus is purely on transmitting energy to the floor.
+          </p>
+        </div>
+      </div>
+      <figure class="hero__figure">
+        <img src="images/hero.jpg" width="2000" height="2499" alt="M.Conradi — press photo" loading="lazy" decoding="async">
+      </figure>
+      <div class="hero__intro hero__intro--after">
+        <div class="hero__bio hero__bio--tail">
+          <p>
+            Today, his studio work focuses on Tech-House, alongside DJing in the local scene and leading the Funky/Hip-Hop group One Million Likes. All these influences converged in his album <em>Equilibrium</em>, which moves from cinematic Trip-Hop to punchy club sounds.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="what-i-do" class="section">
@@ -79,7 +105,7 @@
         </article>
         <article class="card">
           <h3>Sets &amp; mixes</h3>
-          <p>Two recent DJ sets on SoundCloud.</p>
+          <p>Live DJ sets on SoundCloud.</p>
           <div class="embed embed--soundcloud">
             <iframe
               title="SoundCloud: Live at Bahnwärter Thiel — 9 Oct 2025"
