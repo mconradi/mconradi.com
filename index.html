@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M. Conradi — Producer, DJ &amp; MC (Munich)</title>
+  <meta name="description" content="M. Conradi: Munich-based producer, DJ, and MC. Tech-House, live energy, and the album Equilibrium.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand" href="#top">
+        <img class="brand__mark" src="images/logo.svg" width="32" height="32" alt="">
+        <span>M. Conradi</span>
+      </a>
+      <nav class="nav" aria-label="Page sections">
+        <a href="#what-i-do">What I do</a>
+        <a href="#listen">Listen</a>
+        <a href="#video">Video</a>
+        <a href="#photos">Photos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div id="top"></div>
+
+    <!-- HERO: swap hero image — add images/hero.jpg (or .webp) and update src below; remove or keep placeholder -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__intro">
+        <p class="hero__eyebrow">Press kit</p>
+        <h1 id="hero-heading">M. Conradi</h1>
+        <p class="hero__tagline">Producer, DJ &amp; MC — Munich</p>
+        <div class="hero__bio">
+          <p>
+            <strong>M. Conradi</strong> is a Munich-based producer, DJ, and MC. He started in Spain, pursuing both electronic music and Hip-Hop beatmaking and writing. Since 2003, he has performed live across the underground scene as both a DJ and frontman.
+          </p>
+          <p>
+            This background gives him a level of confidence in the DJ booth that goes beyond just mixing tracks. He knows how to read and command a crowd, especially during peak-time, where his focus is purely on transmitting energy to the floor.
+          </p>
+          <p>
+            Today, his studio work focuses on Tech-House, alongside DJing in the local scene and leading the Funky/Hip-Hop group One Million Likes. All these influences converged in his album <em>Equilibrium</em>, which moves from cinematic Trip-Hop to punchy club sounds.
+          </p>
+        </div>
+      </div>
+      <figure class="hero__figure">
+        <!-- Replace src with your press photo, e.g. images/hero.webp -->
+        <img src="images/hero-placeholder.svg" width="800" height="1000" alt="M. Conradi — press photo (replace this image in images/)">
+        <figcaption class="hero__caption">Replace with your hero photo in <code>images/</code> (see <code>images/README.md</code>).</figcaption>
+      </figure>
+    </section>
+
+    <section id="what-i-do" class="section">
+      <h2 class="section__title">What I do</h2>
+      <p class="section__lead">Studio production, club sets, and live performance — grounded in electronic music and Hip-Hop. Drop platform embeds or visuals below.</p>
+      <div class="grid-2">
+        <article class="card">
+          <h3>Production &amp; releases</h3>
+          <p>Highlight a track or album with an official Spotify or SoundCloud embed (paste the iframe from the share dialog).</p>
+          <!-- SPOTIFY: In Spotify → Share → Embed → copy iframe. Paste below (adjust height if needed). -->
+          <div class="embed embed--spotify">
+            <div class="embed__placeholder">
+              Paste Spotify embed iframe here.<br>
+              Example <code>src</code>: <code>https://open.spotify.com/embed/album/…</code> or <code>…/track/…</code>
+            </div>
+            <!--
+            <iframe title="Spotify player" loading="lazy"
+              src="https://open.spotify.com/embed/album/ALBUM_ID?utm_source=generator"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+            -->
+          </div>
+        </article>
+        <article class="card">
+          <h3>Sets &amp; mixes</h3>
+          <p>Use SoundCloud’s embed for DJ sets or previews. Replace the block below with your iframe.</p>
+          <!-- SOUNDCLOUD: Track → Share → Embed → copy iframe code -->
+          <div class="embed embed--soundcloud">
+            <div class="embed__placeholder">
+              Paste SoundCloud embed iframe here.<br>
+              Example <code>src</code>: <code>https://w.soundcloud.com/player/?url=…</code>
+            </div>
+            <!--
+            <iframe title="SoundCloud player" loading="lazy" height="166" scrolling="no"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/TRACK_ID"></iframe>
+            -->
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="listen" class="section">
+      <h2 class="section__title">Listen</h2>
+      <p class="section__lead">Optional short MP3 hosted in this repo. Uncomment the <code>&lt;source&gt;</code> line after you add a file under <code>audio/</code>.</p>
+      <div class="audio-block">
+        <div class="audio-block__label">Direct preview (MP3)</div>
+        <!-- When you add e.g. audio/preview.mp3, uncomment: -->
+        <!--
+        <audio controls preload="metadata">
+          <source src="audio/preview.mp3" type="audio/mpeg">
+        </audio>
+        -->
+        <p style="margin: var(--space-sm) 0 0; font-size: 0.9rem; color: var(--text-muted);">
+          No MP3 linked yet. Add a file to <code>audio/</code> and uncomment the <code>&lt;audio&gt;</code> block in <code>index.html</code>.
+        </p>
+      </div>
+    </section>
+
+    <section id="video" class="section">
+      <h2 class="section__title">Video</h2>
+      <p class="section__lead">YouTube only (no large self-hosted video). Replace <code>VIDEO_ID</code> with the ID from your YouTube URL.</p>
+      <!-- YOUTUBE: Replace demo ID "aqz-KE-bpKQ" with yours. Watch URL https://www.youtube.com/watch?v=YOUR_ID → embed https://www.youtube-nocookie.com/embed/YOUR_ID -->
+      <div class="embed embed--16x9">
+        <iframe title="YouTube video"
+          src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <p style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--text-faint);">
+        Demo embed above — change the video ID in the <code>iframe src</code> to your own YouTube video.
+      </p>
+    </section>
+
+    <section id="photos" class="section">
+      <h2 class="section__title">Photos</h2>
+      <p class="section__lead">Add small JPEG/WebP files to <code>images/</code> and duplicate or remove figures as needed.</p>
+      <div class="gallery">
+        <figure>
+          <!-- <img src="images/gallery-01.jpg" width="600" height="600" alt="M. Conradi — live"> -->
+          <img src="images/hero-placeholder.svg" width="400" height="400" alt="Placeholder — replace with gallery image">
+          <figcaption>Gallery slot 1</figcaption>
+        </figure>
+        <figure>
+          <img src="images/hero-placeholder.svg" width="400" height="400" alt="Placeholder — replace with gallery image">
+          <figcaption>Gallery slot 2</figcaption>
+        </figure>
+        <figure>
+          <img src="images/hero-placeholder.svg" width="400" height="400" alt="Placeholder — replace with gallery image">
+          <figcaption>Gallery slot 3</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 class="section__title">Contact &amp; booking</h2>
+      <p class="section__lead">
+        <!-- Replace with your public email or a form link -->
+        For press and bookings: <a href="mailto:hello@example.com">hello@example.com</a> — update this address in <code>index.html</code>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p>© <span id="y"></span> M. Conradi</p>
+      <div class="social">
+        <!-- Replace # with your real profile URLs -->
+        <a href="#">Instagram</a>
+        <a href="#">YouTube</a>
+        <a href="#">SoundCloud</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
