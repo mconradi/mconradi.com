@@ -16,7 +16,7 @@ Then visit `http://localhost:8080`.
 
 | What | Where |
 |------|--------|
-| **YouTube** | Section “Video”: in the `iframe`, replace the id in `…/embed/VIDEO_ID` with the id from your watch URL. |
+| **YouTube** | Section “Video”: the promo iframe uses a short inline script to set `…/embed/VIDEO_ID?enablejsapi=1&origin=<your-site>` so **localhost** and **GitHub Pages** both send a valid origin (reduces “Error 153” vs a bare embed). If the player still errors: test on **HTTPS** (deployed site), confirm **embedding** is allowed in Studio, and avoid opening the page as **`file://`**. |
 | **Spotify** | Spotify app/web → Share → **Embed** → copy the `<iframe>` → paste inside the Spotify card in `index.html` (remove the gray placeholder `div` if you keep only the iframe). |
 | **SoundCloud** | Track or playlist → Share → **Embed** → copy `<iframe>` → paste into the SoundCloud card. |
 | **Bandcamp** | “Download songs” uses the official embed iframe; tweak `src` (album id, colors, `tracklist`, etc.) in `index.html`. The “More releases” link goes to your full discography. |

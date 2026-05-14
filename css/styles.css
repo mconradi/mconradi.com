@@ -114,6 +114,10 @@ a:hover {
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  box-shadow: 0 0 0 1px var(--border);
 }
 
 .nav {
@@ -153,7 +157,7 @@ main {
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     gap: var(--space-xl);
-    align-items: center;
+    align-items: start;
   }
 }
 
@@ -302,6 +306,79 @@ main {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Video section: stacked YouTube embeds + portrait MP4 */
+.video-grid {
+  display: grid;
+  gap: var(--space-xl) clamp(2rem, 5vw, 3.5rem);
+  margin-top: var(--space-md);
+  align-items: stretch;
+}
+
+.video-grid__youtube-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  min-width: 0;
+}
+
+.video-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  min-width: 0;
+}
+
+.video-item__caption {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+.video-item .embed {
+  margin-top: 0;
+}
+
+.video-panel {
+  margin: 0;
+  border: 1px solid var(--border);
+  background: #000;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.video-panel--portrait {
+  aspect-ratio: 9 / 16;
+  max-height: min(560px, 72vh);
+  width: 100%;
+  max-width: 320px;
+  margin-inline: auto;
+}
+
+@media (min-width: 900px) {
+  .video-grid {
+    grid-template-columns: 1fr min(30vw, 280px);
+  }
+
+  .video-panel--portrait {
+    margin-inline: 0;
+    max-width: none;
+    max-height: none;
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+.video-panel--portrait video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 #download-songs .section__title {

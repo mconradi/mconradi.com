@@ -3,8 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>M. Conradi — Producer, DJ &amp; MC (Munich)</title>
-  <meta name="description" content="M. Conradi: Munich-based producer, DJ, and MC. Tech-House, live energy, and the album Equilibrium.">
+  <!-- Helps YouTube embeds receive a usable referrer (avoids some Error 153 cases) -->
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>M.Conradi — Producer, DJ &amp; MC</title>
+  <meta name="description" content="M.Conradi: Munich-based producer, DJ, and MC. Tech-House, live energy, and the album Equilibrium.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
@@ -16,8 +21,8 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a class="brand" href="#top">
-        <img class="brand__mark" src="images/logo.svg" width="32" height="32" alt="">
-        <span>M. Conradi</span>
+        <img class="brand__mark" src="images/logo-header.jpg" width="32" height="32" alt="">
+        <span>M.Conradi</span>
       </a>
       <nav class="nav" aria-label="Page sections">
         <a href="#what-i-do">What I do</a>
@@ -35,11 +40,11 @@
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__intro">
         <p class="hero__eyebrow">Press kit</p>
-        <h1 id="hero-heading">M. Conradi</h1>
-        <p class="hero__tagline">Producer, DJ &amp; MC — Munich</p>
+        <h1 id="hero-heading">M.Conradi</h1>
+        <p class="hero__tagline">Producer, DJ &amp; MC</p>
         <div class="hero__bio">
           <p>
-            <strong>M. Conradi</strong> is a Munich-based producer, DJ, and MC. He started in Spain, pursuing both electronic music and Hip-Hop beatmaking and writing. Since 2003, he has performed live across the underground scene as both a DJ and frontman.
+            <strong>M.Conradi</strong> is a Munich-based producer, DJ, and MC. He started in Spain, pursuing both electronic music and Hip-Hop beatmaking and writing. Since 2003, he has performed live across the underground scene as both a DJ and frontman.
           </p>
           <p>
             This background gives him a level of confidence in the DJ booth that goes beyond just mixing tracks. He knows how to read and command a crowd, especially during peak-time, where his focus is purely on transmitting energy to the floor.
@@ -50,7 +55,7 @@
         </div>
       </div>
       <figure class="hero__figure">
-        <img src="images/hero.jpg" width="2000" height="2499" alt="M. Conradi — press photo">
+        <img src="images/hero.jpg" width="2000" height="2499" alt="M.Conradi — press photo">
       </figure>
     </section>
 
@@ -63,7 +68,7 @@
           <p><em>Equilibrium</em> — Trip-Hop and Tech-House. Listen on Spotify below.</p>
           <div class="embed embed--spotify">
             <iframe
-              title="Spotify: Equilibrium by M. Conradi"
+              title="Spotify: Equilibrium by M.Conradi"
               style="border-radius:12px"
               src="https://open.spotify.com/embed/album/5pM2gWDPKLR2e9yVnW99hD?utm_source=generator"
               width="100%"
@@ -96,11 +101,11 @@
       <p class="section__lead">Buy and download releases (including <em>Equilibrium</em>) on Bandcamp — high-quality formats, direct support.</p>
       <div class="embed embed--bandcamp">
         <iframe
-          title="Bandcamp: Equilibrium by M. Conradi"
+          title="Bandcamp: Equilibrium by M.Conradi"
           style="border: 0; width: 100%; height: 120px;"
           src="https://bandcamp.com/EmbeddedPlayer/album=1509512668/size=large/bgcol=333333/linkcol=0f91ff/tracklist=false/artwork=small/transparent=true/"
           loading="lazy"
-          seamless><a href="https://mconradi.bandcamp.com/album/equilibrium">Equilibrium by M. Conradi</a></iframe>
+          seamless><a href="https://mconradi.bandcamp.com/album/equilibrium">Equilibrium by M.Conradi</a></iframe>
       </div>
       <p class="section-sub">
         <a href="https://mconradi.bandcamp.com/" rel="noopener noreferrer" target="_blank">More releases on Bandcamp</a>
@@ -109,18 +114,44 @@
 
     <section id="video" class="section">
       <h2 class="section__title">Video</h2>
-      <p class="section__lead">YouTube only (no large self-hosted video). Replace <code>VIDEO_ID</code> with the ID from your YouTube URL.</p>
-      <!-- YOUTUBE: Replace demo ID "aqz-KE-bpKQ" with yours. Watch URL https://www.youtube.com/watch?v=YOUR_ID → embed https://www.youtube-nocookie.com/embed/YOUR_ID -->
-      <div class="embed embed--16x9">
-        <iframe title="YouTube video"
-          src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+      <div class="video-grid">
+        <div class="video-grid__youtube-stack">
+          <figure class="video-item">
+            <figcaption class="video-item__caption">Promotional Video with Harman at the JBL Store, Munich</figcaption>
+            <div class="embed embed--16x9">
+              <iframe
+                class="youtube-embed"
+                data-youtube-id="SajjRGECV60"
+                title="YouTube: Promotional Video with Harman at the JBL Store, Munich"
+                src="about:blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </figure>
+          <figure class="video-item">
+            <figcaption class="video-item__caption">Self-Produced Mini DJ Set</figcaption>
+            <div class="embed embed--16x9">
+              <iframe
+                class="youtube-embed"
+                data-youtube-id="9IIjBFbnXmo"
+                title="YouTube: Self-Produced Mini DJ Set"
+                src="about:blank"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </figure>
+        </div>
+        <figure class="video-item">
+          <figcaption class="video-item__caption">Live at Bahnwärter Thiel - October 2025</figcaption>
+          <div class="video-panel video-panel--portrait">
+            <video controls playsinline preload="metadata" title="Live at Bahnwärter Thiel - October 2025">
+              <source src="images/PXL_20251009_223416857.TS.mp4" type="video/mp4">
+            </video>
+          </div>
+        </figure>
       </div>
-      <p style="margin-top: var(--space-md); font-size: 0.875rem; color: var(--text-faint);">
-        Demo embed above — change the video ID in the <code>iframe src</code> to your own YouTube video.
-      </p>
     </section>
 
     <section id="photos" class="section">
@@ -128,17 +159,16 @@
       <p class="section__lead">Add small JPEG/WebP files to <code>images/</code> and duplicate or remove figures as needed.</p>
       <div class="gallery">
         <figure>
-          <!-- <img src="images/gallery-01.jpg" width="600" height="600" alt="M. Conradi — live"> -->
-          <img src="images/hero-placeholder.svg" width="400" height="400" alt="Placeholder — replace with gallery image">
-          <figcaption>Gallery slot 1</figcaption>
+          <img src="images/MC210226__ful-4.jpg" width="800" height="800" alt="M. Conradi — press photo">
+          <figcaption>Studio</figcaption>
         </figure>
         <figure>
-          <img src="images/hero-placeholder.svg" width="400" height="400" alt="Placeholder — replace with gallery image">
-          <figcaption>Gallery slot 2</figcaption>
+          <img src="images/PXL_20251009_210457825.jpg" width="800" height="800" alt="M. Conradi — live">
+          <figcaption>Live</figcaption>
         </figure>
         <figure>
-          <img src="images/hero-placeholder.svg" width="400" height="400" alt="Placeholder — replace with gallery image">
-          <figcaption>Gallery slot 3</figcaption>
+          <img src="images/MC210226__ful-4.jpg" width="800" height="800" alt="M. Conradi">
+          <figcaption>Press</figcaption>
         </figure>
       </div>
     </section>
@@ -154,7 +184,7 @@
 
   <footer class="site-footer">
     <div class="site-footer__inner">
-      <p>© <span id="y"></span> M. Conradi</p>
+      <p>© <span id="y"></span> M.Conradi</p>
       <div class="social">
         <!-- Replace # with your real profile URLs -->
         <a href="#">Instagram</a>
@@ -166,6 +196,19 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+    document.querySelectorAll("iframe.youtube-embed").forEach(function (el) {
+      var id = el.getAttribute("data-youtube-id");
+      if (!id) return;
+      if (location.protocol === "file:" || !location.origin || location.origin === "null") {
+        el.src = "https://www.youtube.com/embed/" + id;
+        return;
+      }
+      el.src =
+        "https://www.youtube.com/embed/" +
+        id +
+        "?enablejsapi=1&origin=" +
+        encodeURIComponent(location.origin);
+    });
   </script>
 </body>
 </html>
