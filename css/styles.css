@@ -18,6 +18,7 @@
   --font: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   /* Match Spotify column height to two SoundCloud players + gap (see .embed--spotify) */
   --embed-soundcloud-height: 300px;
+  --header-offset: 4rem;
 }
 
 *,
@@ -28,6 +29,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -44,6 +47,7 @@ body {
   color: var(--text);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
 img {
@@ -100,11 +104,13 @@ a:hover {
 .site-header__inner {
   max-width: var(--max-wide);
   margin: 0 auto;
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-sm) max(var(--space-md), env(safe-area-inset-right, 0))
+    var(--space-sm) max(var(--space-md), env(safe-area-inset-left, 0));
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: var(--space-md);
+  min-width: 0;
 }
 
 .brand {
@@ -137,6 +143,7 @@ a:hover {
   flex-wrap: wrap;
   gap: var(--space-sm) var(--space-md);
   justify-content: flex-end;
+  min-width: 0;
 }
 
 .nav a {
@@ -145,6 +152,9 @@ a:hover {
   font-size: 0.875rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  flex-shrink: 0;
+  padding: 0.35rem 0.15rem;
+  touch-action: manipulation;
 }
 
 .nav a:hover {
@@ -154,7 +164,9 @@ a:hover {
 main {
   max-width: var(--max-wide);
   margin: 0 auto;
-  padding: 0 var(--space-md) var(--space-xl);
+  padding: 0 max(var(--space-md), env(safe-area-inset-right, 0)) var(--space-xl)
+    max(var(--space-md), env(safe-area-inset-left, 0));
+  min-width: 0;
 }
 
 .hero {
@@ -233,7 +245,7 @@ main {
 
 .section {
   padding-top: var(--space-xl);
-  scroll-margin-top: 4rem;
+  scroll-margin-top: var(--header-offset);
 }
 
 .section__title {
@@ -252,6 +264,10 @@ main {
   font-size: 1.05rem;
 }
 
+.section__lead a {
+  overflow-wrap: anywhere;
+}
+
 .section-sub {
   margin: var(--space-md) 0 0;
   font-size: 0.9rem;
@@ -259,6 +275,7 @@ main {
 
 .section-sub a {
   color: var(--text-muted);
+  overflow-wrap: anywhere;
 }
 
 .section-sub a:hover {
@@ -350,6 +367,8 @@ main {
   text-transform: uppercase;
   color: var(--text-faint);
   font-weight: 600;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .video-item .embed {
@@ -478,7 +497,8 @@ main {
 
 .site-footer {
   margin-top: var(--space-xl);
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-lg) max(var(--space-md), env(safe-area-inset-right, 0))
+    max(var(--space-lg), env(safe-area-inset-bottom, 0)) max(var(--space-md), env(safe-area-inset-left, 0));
   border-top: 1px solid var(--border);
   max-width: var(--max-wide);
   margin-left: auto;
@@ -584,4 +604,92 @@ main {
   border-radius: 0.25rem;
   padding: 0.1rem 0.35rem;
   line-height: 1;
+}
+
+/* ——— Narrow screens / touch ——— */
+@media (max-width: 720px) {
+  :root {
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --header-offset: 5.75rem;
+    --embed-soundcloud-height: 240px;
+  }
+
+  body {
+    font-size: 1rem;
+  }
+
+  .site-header__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-sm);
+  }
+
+  .brand {
+    align-self: flex-start;
+  }
+
+  .nav {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: var(--space-xs) var(--space-sm);
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.2rem;
+    margin-left: calc(-1 * max(var(--space-md), env(safe-area-inset-left, 0)));
+    margin-right: calc(-1 * max(var(--space-md), env(safe-area-inset-right, 0)));
+    padding-left: max(var(--space-md), env(safe-area-inset-left, 0));
+    padding-right: max(var(--space-md), env(safe-area-inset-right, 0));
+  }
+
+  .nav a {
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+  }
+
+  .hero {
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-lg);
+  }
+
+  .video-panel--portrait {
+    max-height: min(520px, 65vh);
+    max-height: min(520px, 62svh);
+    max-width: min(320px, 100%);
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-md);
+  }
+
+  .site-footer__right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .site-footer .social {
+    justify-content: flex-start;
+  }
+
+  .site-footer__media-kit {
+    align-self: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  :root {
+    --embed-soundcloud-height: 200px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .embed--spotify iframe {
+    height: 260px;
+  }
 }
