@@ -265,9 +265,9 @@ main {
 }
 
 .section__title {
-  margin: 0 0 var(--space-sm);
-  font-size: 0.8125rem;
-  letter-spacing: 0.15em;
+  margin: 0 0 var(--space-md);
+  font-size: 1.125rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-faint);
   font-weight: 700;
