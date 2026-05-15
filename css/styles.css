@@ -559,28 +559,28 @@ main {
   object-fit: contain;
 }
 
-#download-songs .section__title {
+#download .section__title {
   max-width: var(--max-read);
 }
 
 @media (min-width: 720px) {
   #what-i-do .section__lead,
-  #download-songs .section__lead {
+  #download .section__lead {
     max-width: none;
   }
 
-  #download-songs .section__title,
-  #download-songs .section-sub {
+  #download .section__title,
+  #download .section-sub {
     max-width: none;
   }
 }
 
 /* Bandcamp bar is fixed intrinsic width — keep block aligned with .section__lead */
-#download-songs .embed--bandcamp {
+#download .embed--bandcamp {
   max-width: var(--max-read);
 }
 
-#download-songs .section-sub {
+#download .section-sub {
   max-width: var(--max-read);
 }
 
@@ -849,4 +849,97 @@ main {
   .gallery {
     grid-template-columns: 1fr;
   }
+}
+
+/* Legal pages (Impressum, Privacy) */
+.legal-main {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: var(--space-xl) max(var(--space-md), env(safe-area-inset-right, 0))
+    var(--space-xl) max(var(--space-md), env(safe-area-inset-left, 0));
+  scroll-margin-top: var(--header-offset);
+}
+
+.legal-content {
+  max-width: var(--max-read);
+}
+
+.legal-content h1 {
+  margin: 0 0 var(--space-sm);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.legal-content h2 {
+  margin: var(--space-lg) 0 var(--space-sm);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.legal-content h2:first-of-type {
+  margin-top: var(--space-md);
+}
+
+.legal-content p,
+.legal-content ul {
+  margin: 0 0 var(--space-md);
+  color: var(--text-muted);
+}
+
+.legal-content ul {
+  padding-left: 1.25rem;
+}
+
+.legal-content li {
+  margin-bottom: var(--space-xs);
+}
+
+.legal-content__updated {
+  font-size: 0.9rem;
+  color: var(--text-faint);
+}
+
+.legal-content__back {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+}
+
+.site-footer__meta a {
+  color: var(--text-faint);
+  text-decoration-thickness: 1px;
+}
+
+.site-footer__meta a:hover {
+  color: var(--text);
+}
+
+.site-footer--legal .site-footer__inner {
+  align-items: center;
+}
+
+.site-footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+  font-size: 0.875rem;
+}
+
+.site-footer__legal a {
+  color: var(--text-faint);
+  text-decoration-thickness: 1px;
+}
+
+.site-footer__legal a:hover,
+.site-footer__legal a[aria-current="page"] {
+  color: var(--text);
+}
+
+.site-footer__legal a[aria-current="page"] {
+  text-decoration: none;
 }
