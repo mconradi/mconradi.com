@@ -599,6 +599,22 @@ main {
   border: 0;
 }
 
+/* SoundCloud mini player (single-line bar) */
+.embed--soundcloud-mini {
+  margin-top: var(--space-md);
+  border: 0;
+  background: transparent;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.embed--soundcloud-mini iframe {
+  display: block;
+  width: 100%;
+  height: 20px;
+  border: 0;
+}
+
 .embed--spotify iframe {
   display: block;
   width: 100%;
