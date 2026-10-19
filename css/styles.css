@@ -441,6 +441,13 @@ main {
   margin-bottom: 0;
 }
 
+.release-spotlight__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  align-items: center;
+}
+
 .release-spotlight__cta {
   display: inline-block;
   margin-top: var(--space-xs);
@@ -455,6 +462,10 @@ main {
   text-transform: uppercase;
   text-decoration: none;
   transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.release-spotlight__actions .release-spotlight__cta {
+  margin-top: 0;
 }
 
 .release-spotlight__cta:hover {
