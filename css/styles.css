@@ -663,24 +663,111 @@ main {
   margin-top: var(--space-md);
 }
 
-.gallery figure {
+.gallery__item {
   margin: 0;
   border: 1px solid var(--border);
   overflow: hidden;
   background: var(--bg-elevated);
 }
 
-.gallery img {
+.gallery__trigger {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  line-height: 0;
+  color: inherit;
+  transition: filter 0.15s ease;
+}
+
+.gallery__trigger:hover {
+  filter: brightness(1.08);
+}
+
+.gallery__trigger:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.gallery__trigger img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
+  pointer-events: none;
 }
 
 .gallery figcaption {
   padding: var(--space-xs) var(--space-sm);
   font-size: 0.75rem;
   color: var(--text-faint);
+}
+
+/* Photo lightbox */
+.lightbox {
+  margin: auto;
+  padding: var(--space-md);
+  padding-top: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  max-width: min(96vw, 56rem);
+  max-height: 92vh;
+  max-height: 92dvh;
+  overflow: auto;
+  color: var(--text);
+  background: var(--bg-elevated);
+}
+
+.lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.lightbox__close {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: block;
+  margin-left: auto;
+  margin-bottom: var(--space-sm);
+  padding: 0.4rem 0.85rem;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.lightbox__close:hover {
+  border-color: var(--accent);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lightbox__figure {
+  margin: 0;
+}
+
+.lightbox__img {
+  display: block;
+  width: 100%;
+  max-height: min(78vh, 78dvh);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.lightbox__caption {
+  margin-top: var(--space-sm);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
 .site-footer {

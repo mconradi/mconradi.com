@@ -300,16 +300,22 @@
           <img src="images/MC210226__ful-4.jpg" width="800" height="800" alt="M. Conradi — press photo">
           <figcaption>Studio</figcaption>
         </figure-->
-        <figure>
-          <img src="images/PXL_20251009_210457825.jpg" width="800" height="800" alt="M. Conradi — live @ Bahnwärter Thiel">
+        <figure class="gallery__item">
+          <button type="button" class="gallery__trigger" aria-label="View larger: Live @ Bahnwärter Thiel">
+            <img src="images/PXL_20251009_210457825.jpg" width="800" height="800" alt="">
+          </button>
           <figcaption>Live @ Bahnwärter Thiel</figcaption>
         </figure>
-        <figure>
-          <img src="images/MC210226_3.jpg" width="800" height="800" alt="M. Conradi — press photo 1" loading="lazy" decoding="async">
+        <figure class="gallery__item">
+          <button type="button" class="gallery__trigger" aria-label="View larger: Press 1">
+            <img src="images/MC210226_3.jpg" width="800" height="800" alt="" loading="lazy" decoding="async">
+          </button>
           <figcaption>Press 1</figcaption>
         </figure>
-        <figure>
-          <img src="images/MC210226__ful-4.jpg" width="800" height="800" alt="M. Conradi — press photo 2" loading="lazy" decoding="async">
+        <figure class="gallery__item">
+          <button type="button" class="gallery__trigger" aria-label="View larger: Press 2">
+            <img src="images/MC210226__ful-4.jpg" width="800" height="800" alt="" loading="lazy" decoding="async">
+          </button>
           <figcaption>Press 2</figcaption>
         </figure>
       </div>
@@ -371,6 +377,14 @@
     </div>
   </footer>
 
+  <dialog class="lightbox" id="photo-lightbox" aria-labelledby="photo-lightbox-caption">
+    <button type="button" class="lightbox__close" id="photo-lightbox-close" aria-label="Close image">Close</button>
+    <figure class="lightbox__figure">
+      <img class="lightbox__img" id="photo-lightbox-img" width="800" height="800" alt="">
+      <figcaption class="lightbox__caption" id="photo-lightbox-caption"></figcaption>
+    </figure>
+  </dialog>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
     document.querySelectorAll("iframe.youtube-embed").forEach(function (el) {
@@ -386,6 +400,50 @@
         "?enablejsapi=1&origin=" +
         encodeURIComponent(location.origin);
     });
+
+    (function () {
+      var dialog = document.getElementById("photo-lightbox");
+      var dialogImg = document.getElementById("photo-lightbox-img");
+      var dialogCaption = document.getElementById("photo-lightbox-caption");
+      var closeBtn = document.getElementById("photo-lightbox-close");
+      if (!dialog || !dialogImg || !dialogCaption || !closeBtn) return;
+
+      function openLightbox(trigger) {
+        var figure = trigger.closest(".gallery__item");
+        if (!figure) return;
+        var thumb = trigger.querySelector("img");
+        var caption = figure.querySelector("figcaption");
+        if (!thumb) return;
+        dialogImg.src = thumb.src;
+        dialogImg.alt = (caption && caption.textContent.trim()) || trigger.getAttribute("aria-label") || "";
+        dialogCaption.textContent = caption ? caption.textContent.trim() : "";
+        dialog.showModal();
+        closeBtn.focus();
+      }
+
+      function closeLightbox() {
+        if (!dialog.open) return;
+        dialog.close();
+        dialogImg.removeAttribute("src");
+      }
+
+      document.querySelectorAll(".gallery__trigger").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          openLightbox(btn);
+        });
+      });
+
+      closeBtn.addEventListener("click", closeLightbox);
+
+      dialog.addEventListener("click", function (event) {
+        if (event.target === dialog) closeLightbox();
+      });
+
+      dialog.addEventListener("close", function () {
+        dialogImg.removeAttribute("src");
+        dialogCaption.textContent = "";
+      });
+    })();
   </script>
 </body>
 </html>
