@@ -353,7 +353,34 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-  min-width: 0;
+}
+
+.show-list__poster {
+  width: 7.5rem;
+  margin: 0;
+  flex-shrink: 0;
+  align-self: start;
+}
+
+.show-list__poster .gallery__thumb {
+  width: 7.5rem;
+  cursor: zoom-in;
+}
+
+.show-list__poster .gallery__thumb img {
+  aspect-ratio: 143 / 200;
+  width: 7.5rem;
+  height: auto;
+  object-fit: contain;
+  background: #1a1a1a;
+}
+
+@media (max-width: 420px) {
+  .show-list__poster,
+  .show-list__poster .gallery__thumb,
+  .show-list__poster .gallery__thumb img {
+    width: 6rem;
+  }
 }
 
 .grid-2 {
@@ -676,69 +703,36 @@ main {
   margin-top: var(--space-md);
 }
 
-.gallery__item {
+.gallery .gallery__figure {
   margin: 0;
   border: 1px solid var(--border);
   overflow: hidden;
   background: var(--bg-elevated);
 }
 
-.gallery__trigger {
+.gallery__thumb {
   display: block;
   width: 100%;
   margin: 0;
   padding: 0;
   border: 0;
-  background: transparent;
+  background: none;
   cursor: zoom-in;
-  line-height: 0;
+  font: inherit;
   color: inherit;
-  transition: filter 0.15s ease;
+  line-height: 0;
 }
 
-.gallery__trigger:hover {
-  filter: brightness(1.08);
-}
-
-.gallery__trigger:focus-visible {
+.gallery__thumb:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.gallery__trigger img {
+.gallery img {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   display: block;
-  pointer-events: none;
-}
-
-/* Concert flyer in Shows — keep after .gallery__trigger img so portrait isn’t forced square */
-.show-list__poster {
-  width: 7.5rem;
-  margin: 0;
-  flex-shrink: 0;
-  align-self: start;
-}
-
-.show-list__poster .gallery__trigger {
-  width: 7.5rem;
-}
-
-.show-list__poster .gallery__trigger img {
-  aspect-ratio: 143 / 200;
-  width: 7.5rem;
-  height: auto;
-  object-fit: contain;
-  background: #1a1a1a;
-}
-
-@media (max-width: 420px) {
-  .show-list__poster,
-  .show-list__poster .gallery__trigger,
-  .show-list__poster .gallery__trigger img {
-    width: 6rem;
-  }
 }
 
 .gallery figcaption {
@@ -747,68 +741,87 @@ main {
   color: var(--text-faint);
 }
 
-/* Photo lightbox */
-.lightbox {
-  margin: auto;
-  padding: var(--space-md);
-  padding-top: var(--space-lg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  max-width: min(96vw, 56rem);
-  max-height: 92vh;
-  max-height: 92dvh;
-  overflow: auto;
-  color: var(--text);
-  background: var(--bg-elevated);
+.lightbox:not([open]) {
+  display: none;
 }
 
-.lightbox::backdrop {
+.lightbox[open] {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  padding: max(3.5rem, env(safe-area-inset-top, 0))
+    max(1rem, env(safe-area-inset-right, 0))
+    max(1rem, env(safe-area-inset-bottom, 0))
+    max(1rem, env(safe-area-inset-left, 0));
+  max-width: none;
+  max-height: none;
+  width: auto;
+  height: auto;
+  border: none;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.lightbox[open]::backdrop {
   background: rgba(0, 0, 0, 0.88);
 }
 
-.lightbox__close {
-  position: sticky;
-  top: 0;
+.lightbox__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  cursor: zoom-out;
+}
+
+.lightbox__img {
+  position: relative;
   z-index: 1;
-  display: block;
-  margin-left: auto;
-  margin-bottom: var(--space-sm);
-  padding: 0.4rem 0.85rem;
-  border-radius: 9999px;
+  max-width: min(96vw, 1400px);
+  max-height: min(88vh, 1200px);
+  max-height: min(88dvh, 1200px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: max(0.75rem, env(safe-area-inset-top, 0));
+  right: max(0.75rem, env(safe-area-inset-right, 0));
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+  background: rgba(20, 20, 20, 0.92);
   color: var(--text);
-  font-family: var(--font);
-  font-weight: 600;
-  font-size: 0.8125rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-size: 1.75rem;
+  font-weight: 300;
+  line-height: 1;
   cursor: pointer;
   transition: border-color 0.15s ease, background 0.15s ease;
 }
 
 .lightbox__close:hover {
   border-color: var(--accent);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(30, 30, 30, 0.95);
 }
 
-.lightbox__figure {
-  margin: 0;
-}
-
-.lightbox__img {
-  display: block;
-  width: 100%;
-  max-height: min(78vh, 78dvh);
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-.lightbox__caption {
-  margin-top: var(--space-sm);
-  text-align: center;
-  font-size: 0.9rem;
-  color: var(--text-muted);
+.lightbox__close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 .site-footer {
