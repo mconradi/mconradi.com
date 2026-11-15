@@ -343,6 +343,19 @@ main {
   font-style: italic;
 }
 
+.show-list__item--with-poster {
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: var(--space-md);
+}
+
+.show-list__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  min-width: 0;
+}
+
 .grid-2 {
   display: grid;
   gap: var(--space-lg);
@@ -698,6 +711,34 @@ main {
   object-fit: cover;
   display: block;
   pointer-events: none;
+}
+
+/* Concert flyer in Shows — keep after .gallery__trigger img so portrait isn’t forced square */
+.show-list__poster {
+  width: 7.5rem;
+  margin: 0;
+  flex-shrink: 0;
+  align-self: start;
+}
+
+.show-list__poster .gallery__trigger {
+  width: 7.5rem;
+}
+
+.show-list__poster .gallery__trigger img {
+  aspect-ratio: 143 / 200;
+  width: 7.5rem;
+  height: auto;
+  object-fit: contain;
+  background: #1a1a1a;
+}
+
+@media (max-width: 420px) {
+  .show-list__poster,
+  .show-list__poster .gallery__trigger,
+  .show-list__poster .gallery__trigger img {
+    width: 6rem;
+  }
 }
 
 .gallery figcaption {
