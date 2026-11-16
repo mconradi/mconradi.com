@@ -543,7 +543,8 @@ main {
   align-items: stretch;
 }
 
-.video-grid__youtube-stack {
+.video-grid__youtube-stack,
+.video-grid__portrait-stack {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl);
